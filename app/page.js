@@ -129,14 +129,16 @@ export default function Home() {
           </Typography>
         </Box>
         
-        <Button 
-        variant="contained" 
-        onClick={() => {
-          handleOpen();
-        }}
-        >
-          Add New Item
-        </Button>
+        <Box display="flex" justifyContent="center" width="100%" padding="10px">
+          <Button 
+          variant="contained" 
+          onClick={() => {
+            handleOpen();
+          }}
+          >
+            Add New Item
+          </Button>
+        </Box>  
         <Stack width="800px" height="300px" spacing={2} overflow="auto">
           {inventory.map(({ name, quantity }) => (
             <Box 
