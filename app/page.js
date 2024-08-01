@@ -113,14 +113,7 @@ export default function Home() {
           </Stack>
         </Box>
       </Modal>
-      <Button 
-        variant="contained" 
-        onClick={() => {
-          handleOpen();
-        }}
-      >
-        Add New Item
-      </Button>
+
       <Box borders="1px solid #333">
         <Box 
           width="800px" 
@@ -129,11 +122,21 @@ export default function Home() {
           display="flex" 
           alignItems="center" 
           justifyContent="center"
+          border="1px solid #333"
         >
           <Typography variant="h2" color="#333">
             Inventory Items
           </Typography>
         </Box>
+        
+        <Button 
+        variant="contained" 
+        onClick={() => {
+          handleOpen();
+        }}
+        >
+          Add New Item
+        </Button>
         <Stack width="800px" height="300px" spacing={2} overflow="auto">
           {inventory.map(({ name, quantity }) => (
             <Box 
@@ -145,6 +148,7 @@ export default function Home() {
               justifyContent="space-between"
               bgColor="#f0f0f0"
               padding={5}
+              border="1px solid #333" 
             >
               <Typography variant="h3" color="#333" textAlign="center">
                 {name.charAt(0).toUpperCase() + name.slice(1)}
