@@ -152,10 +152,10 @@ export default function Home() {
               padding={5}
               border="1px solid #333" 
             >
-              <Typography variant="h3" color="#333" textAlign="center">
+              <Typography variant="h4" color="#333" textAlign="center">
                 {name.charAt(0).toUpperCase() + name.slice(1)}
               </Typography>
-              <Typography variant="h3" color="#333" textAlign="center">
+              <Typography variant="h4" color="#333" textAlign="center">
                 {quantity}
               </Typography>
               <Button 
