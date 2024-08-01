@@ -64,7 +64,8 @@ export default function Home() {
   <Box 
   width="100vw" 
   height="100vh" 
-  display="flex" 
+  display="flex"
+  flexDirection="column"
   justifyContent="center" 
   alignItems="center"
   gap={2}
@@ -109,7 +110,44 @@ export default function Home() {
         </Stack>
       </Box>
     </Modal>
-    <Typography variant="h1">Inventory Tracker</Typography>
-  </Box>
+    <Button 
+      variant = "container" 
+      onClick={()=>{
+        handleOpen()
+      }}
+    >
+      Add New Item
+    </Button>
+      <Box borders="1px solid #333">
+        <Box 
+          width="800px" 
+          height="100px" 
+          bgcolor="#ADD8E6"
+          display="flex" 
+          alignItems="center" 
+          justifyContent="center"
+        >
+          <Typography variant="h2" color = "#333">
+            Inventory Items
+          </Typography>
+        </Box>
+      </Box>
+      <Stack width="800px" height="300px" spacing={2} overflow="auto">
+        {inventory.map(({name, quantity}) => {
+          <Box 
+            key={name} 
+            width="100%" 
+            minHeight="150px" 
+            display="flex"
+            alignItems="center" 
+            justifyContent="center"
+            bgColor="#f0f0f0"
+            padding={5}
+          >
+            <Typography>{name}</Typography>
+          </Box>
+        })}
+      </Stack>
+    </Box>
   )
 }
